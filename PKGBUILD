@@ -3,7 +3,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kwin
-pkgver=5.22.2.1.r19616.ge35ed5088
+pkgver=5.22.3.r19616.ge35ed5088
 pkgrel=1
 pkgdesc='An easy to use, but flexible, composited Window Manager'
 arch=(x86_64 aarch64)
@@ -36,6 +36,6 @@ package() {
 
 pkgver() {
   cd $pkgname
-  _ver=5.22.2.1
+  _ver=5.22.3
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
