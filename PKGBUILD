@@ -3,7 +3,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kwin
-pkgver=5.22.4.r19807.g17b161213
+pkgver=5.22.4.r19808.g1490215f0
 pkgrel=1
 pkgdesc='An easy to use, but flexible, composited Window Manager'
 arch=(x86_64 aarch64)
