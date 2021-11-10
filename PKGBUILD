@@ -2,8 +2,9 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
+_commit=4206046f12b7f029ff95c6fda4fd5bfc81564131
 pkgname=kwin
-pkgver=5.23.2.r20255.g22b7ac02b
+pkgver=5.23.3.r20235.g4206046f1
 pkgrel=1
 pkgdesc='An easy to use, but flexible, composited Window Manager'
 arch=(x86_64 aarch64)
@@ -15,13 +16,15 @@ depends=(kscreenlocker xcb-util-cursor plasma-framework kcmutils kwayland-server
 makedepends=(git extra-cmake-modules qt5-tools kdoctools krunner)
 optdepends=('qt5-virtualkeyboard: virtual keyboard support for kwin-wayland')
 groups=(plasma)
-source=("git+https://github.com/KDE/$pkgname.git")
+source=("git+https://github.com/KDE/$pkgname.git#commit=$_commit")
 install=$pkgname.install
 sha256sums=('SKIP')
-validpgpkeys=('2D1D5B0588357787DE9EE225EC94D18F7F05997E'  # Jonathan Riddell <jr@jriddell.org>
-              '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
-              'D07BD8662C56CB291B316EB2F5675605C74E02CF'  # David Edmundson <davidedmundson@kde.org>
-              '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
+
+pkgver() {
+  cd $pkgname
+  _ver=5.23.3
+  echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
+}
 
 build() {
   cmake -B build -S $pkgname \
@@ -34,8 +37,3 @@ package() {
   DESTDIR="$pkgdir" cmake --install build
 }
 
-pkgver() {
-  cd $pkgname
-  _ver=5.23.2
-  echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
-}
