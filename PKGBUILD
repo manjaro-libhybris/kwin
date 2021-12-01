@@ -4,7 +4,7 @@
 
 #_commit=4206046f12b7f029ff95c6fda4fd5bfc81564131
 pkgname=kwin
-pkgver=5.23.3.r20434.g356fff992
+pkgver=5.23.4.r20437.g88d423ddc
 pkgrel=1
 pkgdesc='An easy to use, but flexible, composited Window Manager'
 arch=(x86_64 aarch64)
@@ -23,7 +23,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $pkgname
-  _ver=5.23.3
+  _ver=5.23.4
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
