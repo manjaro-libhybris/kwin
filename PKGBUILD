@@ -4,7 +4,7 @@
 
 #_commit=4206046f12b7f029ff95c6fda4fd5bfc81564131
 pkgname=kwin
-pkgver=5.23.4.r20474.g1f798485b
+pkgver=5.23.4.r20475.g92d334531
 pkgrel=1
 pkgdesc='An easy to use, but flexible, composited Window Manager'
 arch=(x86_64 aarch64)
